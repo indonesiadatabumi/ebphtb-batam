@@ -100,19 +100,19 @@ use App\Services\EbphtbServices;
             <table id="datatable" class="table table-lg table-bordered table-thead-bordered table-hover table-align-middle card-table">
               <thead class="thead-light">
                 <tr>
-                  <th>No</th>
-                  <th>NOP</th>
-                  <th>Kode Billing</th>
-                  <th>No. Ketetapan</th>
-                  <th>Tgl. Ketetapan</th>
-                  <th>Tgl. Jatuh Tempo</th>
-                  <th>Nama Pembeli</th>
-                  <th>Jumlah KB</th>
-                  <th class="text-center">Keterangan</th>
-                  <th class="text-center">Verifikasi Kasi Penagihan & Pemeriksaan</th>
-                  <th class="text-center">Verifikasi Kasi Penilaian & Penetapan</th>
-                  <th class="text-center">Verifikasi Kabid</th>
-                  <th class="text-center">Aksi</th>
+                  <th scope="col" rowspan="2" style="vertical-align: middle;" class="text-center pb-1">NO.</th>
+                  <th scope="col" rowspan="2" style="vertical-align: middle;" class="text-center pb-1">NOP</th>
+                  <th rowspan="2" style="vertical-align: middle;" class="text-center pb-1">Kode Billing</th>
+                  <th rowspan="2" style="vertical-align: middle;" class="text-center pb-1">No. Ketetapan</th>
+                  <th rowspan="2" style="vertical-align: middle;" class="text-center pb-1">Tgl. Ketetapan</th>
+                  <th rowspan="2" style="vertical-align: middle;" class="text-center pb-1">Tgl. Jatuh Tempo</th>
+                  <th rowspan="2" style="vertical-align: middle;" class="text-center pb-1">Nama Pembel</th>
+                  <th rowspan="2" style="vertical-align: middle;" class="text-center pb-1">Jumlah KB</th>
+                  <th rowspan="2" style="vertical-align: middle;" class="text-center pb-1">Keterangan</th>
+                  <th rowspan="2" style="vertical-align: middle;" class="text-center pb-1">Verifikasi Kasi Penagihan & Pemeriksaan</th>
+                  <th rowspan="2" style="vertical-align: middle;" class="text-center pb-1">Verifikasi Kasi Penilaian & Penetapan</th>
+                  <th rowspan="2" style="vertical-align: middle;" class="text-center pb-1">Verifikasi Kabid</th>
+                  <th rowspan="2" style="vertical-align: middle;" class="text-center pb-1">Aksi</th>
                 </tr>
               </thead>
               <tbody>
