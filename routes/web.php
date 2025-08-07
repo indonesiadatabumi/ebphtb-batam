@@ -8,6 +8,7 @@ use App\Http\Controllers\PDFController;
 use App\Http\Controllers\Pages\DashboardController;
 use App\Http\Controllers\NjopController;
 use App\Http\Controllers\Pages\MonitoringTransaksiController;
+use App\Http\Controllers\VerifikasiController; // <-- TAMBAHKAN IMPORT CONTROLLER BARU
 
 // Route::get('/', function () { 
 //     return view('pages/login');   
@@ -23,7 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/bukti-transaksi/{act}/{bookid}', [SspdController::class, 'buktiTransaksi']);
     Route::get('/print-sspd/{bookid}', [SspdController::class, 'printSSPD']);
     Route::post('/sspd/ceknop', [SspdController::class, 'cekNOP'])->name('CekNOP');
-    Route::post('/sspd/cekpbb', [SspdController::class, 'cekPBB'])->name('CekPBB');    
+    Route::post('/sspd/cekpbb', [SspdController::class, 'cekPBB'])->name('CekPBB');     
     Route::post('/sspd/cektunggakanpbb', [SspdController::class, 'cekTunggakanPBB'])->name('cekTunggakanPBB');
     Route::get('/sspd/lampiran/{bookid}/{id}', [SspdController::class, 'lampiranView']);
     Route::post('/sspd/hapusbilling', [SspdController::class, 'hapusSSPD'])->name('sspd:hapusbilling');
@@ -38,6 +39,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/monitoring/transaksi', [MonitoringTransaksiController::class, 'index']);
     Route::get('/monitoring/kb', [MonitoringTransaksiController::class, 'monitoringkb']);
     Route::get('/kb/cetak/{bookid}', [MonitoringTransaksiController::class, 'cetakKB']);
+
+    // ==================================================================
+    // ==               ROUTE BARU UNTUK VERIFIKASI                    ==
+    // ==================================================================
+    Route::prefix('verifikasi')->name('verifikasi.')->group(function () {
+        Route::get('/transaksi', [VerifikasiController::class, 'transaksi'])->name('transaksi');
+        Route::get('/kurang-bayar', [VerifikasiController::class, 'kurangBayar'])->name('kurangBayar');
+    });
+    // ==================================================================
+
 
     Route::post('/logout', [AuthController::class, 'logout']);
 
