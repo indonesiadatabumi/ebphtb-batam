@@ -46,8 +46,8 @@
             <div class="col-sm">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb breadcrumb-no-gutter">
-                  <li class="breadcrumb-item"><a class="breadcrumb-link" href="javascript:;">Kelola Verifikasi</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Data Verifikasi</li>
+                  <li class="breadcrumb-item"><a class="breadcrumb-link" href="javascript:;">Kelola SSPD</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Data SSPD</li>
                 </ol>
               </nav>
               <h1 class="page-header-title">Data Transaksi SSPD  </h1>
