@@ -28,6 +28,6 @@ class VerifikasiController extends Controller
         // Contoh logika: Ambil data kurang bayar yang perlu diverifikasi
         $dataKurangBayar = KurangBayar::where('status', 'menunggu_verifikasi')->get(); // Sesuaikan query
 
-        return view('pages.verifikasi.kurang-bayar', compact('dataKurangBayar'));
+        return view('pages.verifikasi_kurang_bayar', compact('dataKurangBayar'));
     }
 }
