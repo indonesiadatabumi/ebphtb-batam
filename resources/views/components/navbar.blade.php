@@ -61,7 +61,27 @@
                                     </li> -->
                                 </ul>
                         </li>
-
+                        {{-- MENU BARU: VERIFIKASI --}}
+                        <li class="navbar-vertical-aside-has-menu {{ request()->is('verifikasi*') ? 'show' : '' }}">
+                            <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle {{ request()->is(patterns: 'verifikasi*') ? 'active' : '' }}" href="javascript:;" title="Verifikasi">
+                                <i class="tio-checkmark-circle-outlined nav-icon"></i>
+                                <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Verifikasi</span>
+                            </a>
+                            <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->is('verifikasi/transaksi*') ? 'active' : '' }}" href="{{ route('verifikasi.transaksi') }}" title="Verifikasi Transaksi">
+                                        <span class="tio-circle nav-indicator-icon"></span>
+                                        <span class="text-truncate">Verifikasi Transaksi</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->is('verifikasi/kurang-bayar*') ? 'active' : '' }}" href="{{ route('verifikasi.kurangBayar') }}" title="Verifikasi Kurang Bayar">
+                                        <span class="tio-circle nav-indicator-icon"></span>
+                                        <span class="text-truncate">Verifikasi Kurang Bayar</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <!-- <li class="nav-item ">
                             <a class="js-nav-tooltip-link nav-link {{ request()->is('monitoring/transaksi') ? 'active' : '' }}" href="{{ url('monitoring/transaksi') }}" title="Monitoring Transaksi" data-placement="left">
                                 <i class="tio-devices-2 nav-icon"></i>

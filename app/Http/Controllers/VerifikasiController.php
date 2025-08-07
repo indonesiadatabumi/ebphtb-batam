@@ -14,9 +14,10 @@ class VerifikasiController extends Controller
     public function transaksi()
     {
         // Contoh logika: Ambil semua transaksi yang statusnya menunggu verifikasi
-        $dataTransaksi = DataTransaksi::where('status_pembayaran', 'menunggu_verifikasi')->get(); // Sesuaikan query
+        // $dataTransaksi = DataTransaksi::where('status_pembayaran', 'menunggu_verifikasi')->get(); // Sesuaikan query
 
-        return view('pages.verifikasi.transaksi', compact('dataTransaksi'));
+        return view('pages.verifikasi');
+        // , compact('dataTransaksi')
     }
 
     /**
