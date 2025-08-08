@@ -10,7 +10,7 @@ use App\Services\EbphtbServices;
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Verifikasi Transaksi | EBPHTB</title>
+    <title>{{ $title }} | EBPHTB</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="https://batam.go.id/wp-content/uploads/2018/03/cropped-home-32x32.png" sizes="32x32" />
@@ -190,7 +190,94 @@ use App\Services\EbphtbServices;
                   </td>
                 </tr>
               </tbody>
-
+         {{-- <tbody>
+                @forelse ($dataTransaksi as $index => $transaksi)
+                <tr>
+                    <td class="text-center">{{ $index + 1 }}</td>
+                    
+                    <td class="text-center">
+                        {{ $transaksi->NOP }}
+                    </td> 
+                    
+                    <td>
+                        {{ $transaksi->ALAMAT_OP ?? 'ASEP' }}
+                    </td> 
+                    
+                    <td class="text-center">
+                        {{ $transaksi->KD_BOOKING ?? 'N/A' }} <br>
+                        <small>{{ $transaksi->TGL_REKAM ? \Carbon\Carbon::parse($transaksi->TGL_REKAM)->format('d/m/Y') : '-' }}</small>
+                    </td>
+                    
+                    <td class="text-center">
+                        {{ $transaksi->LUAS_TANAH }} / {{ $transaksi->LUAS_BNG }} m²
+                    </td>
+                    
+                    <td>
+                        {{ $transaksi->KETERANGAN }}
+                    </td>
+                    
+                    <td class="text-right">
+                        Rp{{ number_format($transaksi->HARGA_TRANSAKSI ?? 0, 0, ',', '.') }}
+                    </td>
+                    
+                    <td class="text-right">
+                        Rp{{ number_format($transaksi->BPHTB_YG_HARUS_DIBAYAR ?? 0, 0, ',', '.') }}
+                    </td>
+                    
+                    <td class="text-center">
+                        @if($transaksi->STATUS_BOOKING == 'Lengkap')
+                            <span class="legend-indicator bg-success" title="Lengkap"></span>
+                        @else
+                            <span class="legend-indicator bg-danger" title="Belum Lengkap"></span>
+                        @endif
+                    </td>
+                    
+                    <td class="text-center">
+                        @if($transaksi->STATUS_BAYAR == 'SELESAI')
+                            <i class="fas fa-check text-success" title="Selesai">✔</i>
+                        @else
+                            <i class="fas fa-clock text-warning" title="Pending"></i>
+                        @endif
+                    </td>
+                    
+                    <td class="text-center">
+                        @if($transaksi->VALIDASI_KASI == 'SELESAI')
+                            <i class="fas fa-check text-success" title="Selesai">✔</i>
+                        @else
+                            <i class="fas fa-clock text-warning" title="Pending"></i>
+                        @endif
+                    </td>
+                    
+                    <td class="text-center">
+                        @if($transaksi->VALIDASI_KABID == 'SELESAI')
+                            <i class="fas fa-check text-success" title="Selesai">✔</i>
+                        @else
+                            <i class="fas fa-clock text-warning" title="Pending"></i>
+                        @endif
+                    </td>
+                    
+                    <td>{{ $transaksi->CATATAN ?? '-' }}</td>
+                    
+                    <td class="text-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Aksi
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ route('sspd.show', $transaksi->ID) }}">Lihat SSPD</a>
+                                <a class="dropdown-item" href="{{ route('lampiran.print', $transaksi->ID) }}">Cetak Lampiran</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                @empty
+                <tr>
+                    <td colspan="15" class="text-center p-4">
+                        <p>Data tidak ditemukan.</p>
+                    </td>
+                </tr>
+                @endforelse
+            </tbody> --}}
             </table>
           </div>
           <!-- End Table -->
