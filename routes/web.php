@@ -8,6 +8,7 @@ use App\Http\Controllers\PDFController;
 use App\Http\Controllers\Pages\DashboardController;
 use App\Http\Controllers\NjopController;
 use App\Http\Controllers\Pages\MonitoringTransaksiController;
+use App\Http\Controllers\Pages\VerifikasiController;
 
 // Route::get('/', function () { 
 //     return view('pages/login');   
@@ -38,6 +39,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/monitoring/transaksi', [MonitoringTransaksiController::class, 'index']);
     Route::get('/monitoring/kb', [MonitoringTransaksiController::class, 'monitoringkb']);
     Route::get('/kb/cetak/{bookid}', [MonitoringTransaksiController::class, 'cetakKB']);
+
+    // Verifikasi
+    Route::prefix('verifikasi')->name('verifikasi.')->group(function () {
+        Route::get('/transaksi', [VerifikasiController::class, 'transaksi'])->name('transaksi');
+        Route::get('/kurang-bayar', [VerifikasiController::class, 'kurangBayar'])->name('kurangBayar');
+    });
 
     Route::post('/logout', [AuthController::class, 'logout']);
 
